@@ -1,0 +1,19 @@
+{
+  "name": "vocabulary-trainer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "better-sqlite3": "^7.1.5",
+    "express": "^4.17.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
