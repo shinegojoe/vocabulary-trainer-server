@@ -114,6 +114,12 @@ router.delete('/:id', (req, res, next) => {
   console.log('del', req.params)
   db = new Database('vocabulary.db', { verbose: console.log })
   try {
+    const sql2 = `DELETE from text WHERE vid=$vid`
+    const stmt2 = db.prepare(sql2)
+    const _ = stmt2.run({
+      vid: req.params.id
+    })
+
     const sql = `DELETE from vocabulary WHERE id=$id`
     const stmt =db.prepare(sql)
     const resp = stmt.run({
