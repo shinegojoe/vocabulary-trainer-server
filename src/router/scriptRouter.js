@@ -4,13 +4,13 @@ var router = express.Router()
 const Database = require('better-sqlite3')
 
 
-router.get('/xxx', (req, res, next)=> {
+router.get('/', (req, res, next)=> {
     let db
     try {
         console.log(req.query)
         db = new Database('vocabulary.db', { verbose: console.log })
         // const sql = `SELECT * from vocabulary WHERE text LIKE '%${req.query.word}' AND name = $name`
-        const sql = `SELECT * from vocabulary WHERE instr(text, $word)>1 AND name = $name`
+        const sql = `SELECT * from script WHERE instr(text, $word)>1 AND name = $name LIMIT 3`
 
         // const sql = `SELECT * from vocabulary`
 
@@ -34,7 +34,7 @@ router.post('/add', (req, res, next)=> {
         console.log(req.query)
         console.log(req.params)
         db = new Database('vocabulary.db', { verbose: console.log })
-        const sql = `INSERT OR IGNORE INTO vocabulary(name, text) VALUES ($name, $text)`
+        const sql = `INSERT OR IGNORE INTO script(name, text) VALUES ($name, $text)`
         const stmt =db.prepare(sql)
         const resp = stmt.run(req.body)
         res.json({
