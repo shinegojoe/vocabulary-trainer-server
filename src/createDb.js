@@ -36,5 +36,6 @@ const createText = (db) => {
 }
 
 // createTab(db)
-// createVocabulary(db)
+createScript(db)
+createVocabulary(db)
 createText(db)

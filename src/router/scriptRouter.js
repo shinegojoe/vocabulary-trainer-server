@@ -2,9 +2,9 @@ var express = require('express')
 var router = express.Router()
 
 const Database = require('better-sqlite3')
+const apiString = '/script'
 
-
-router.get('/', (req, res, next)=> {
+router.get(apiString, (req, res, next)=> {
     let db
     try {
         console.log(req.query)
@@ -27,7 +27,7 @@ router.get('/', (req, res, next)=> {
    
 })
 
-router.post('/add', (req, res, next)=> {
+router.post(apiString, (req, res, next)=> {
     let db
     try {
         console.log(req.body)

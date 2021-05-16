@@ -2,8 +2,9 @@ var express = require('express')
 var router = express.Router()
 
 const Database = require('better-sqlite3')
+const apiString = '/text'
 
-router.get('/', (req, res, next)=> {
+router.get(apiString, (req, res, next)=> {
   let db
   db = new Database('vocabulary.db', { verbose: console.log })
   try {
@@ -19,7 +20,7 @@ router.get('/', (req, res, next)=> {
 })
 
 
-router.post('/', (req, res, next)=> {
+router.post(apiString, (req, res, next)=> {
     let db
     db = new Database('vocabulary.db', { verbose: console.log })
     try {
@@ -39,7 +40,7 @@ router.post('/', (req, res, next)=> {
 })
 
 
-router.delete('/:id', (req, res, next)=> {
+router.delete(`${apiString}/:id`, (req, res, next)=> {
   //vid
   let db
   console.log('del', req.params)
