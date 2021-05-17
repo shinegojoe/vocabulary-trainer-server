@@ -1,0 +1,19 @@
+kind: pipeline
+name: vocabulary CICD
+type: docker
+
+steps:
+  # - name: server-test
+  #   image: node:latest
+  #   commands:
+  #     - npm install
+  #     - node src/tableInit.js
+  #     - sleep 10
+  #     - npm run test
+
+  - name: deploy-server
+    image: node:latest
+    commands:
+      # - bash test2.sh
+      - npm install axios
+      - bash deploy.sh

@@ -1,1 +1,1 @@
-sudo docker run --name vocabulary-server -ti -p 5010:5010 -v /home/taka/project/deploy/gtts:/app/storage vocabulary-server:latest /bin/bash
+sudo docker run --name vocabulary-server -ti -d -p 5011:5011 -v /home/taka/project/deploy/gtts:/app/gtts -v /home/taka/project/deploy/vocabulary-server:/app/storage vocabulary-server:v1

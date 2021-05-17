@@ -4,9 +4,7 @@ FROM ubuntu:18.04
 WORKDIR /app
 
 # Install any needed packages specified in requirements.txt
-COPY src ./src
-COPY package.json ./
-COPY .env ./
+
 
 RUN apt update
 RUN apt install curl -y
@@ -16,7 +14,6 @@ RUN apt-get install -y nodejs
 RUN apt install vim -y
 RUN apt-get install build-essential -y
 RUN npm install pm2 -g
-RUN npm install
 
 # Make port available to the world outside this container
 # 5003 for server, 5004 for client

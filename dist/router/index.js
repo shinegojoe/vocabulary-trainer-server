@@ -11,7 +11,7 @@ router.use('/', vocabularyRouter)
 router.use('/', textRouter)
 router.use('/', playSoundRoute)
 router.get('/test', (req, res, next)=> {
-  res.send('v102')
+  res.send('v101')
 })
 
 
